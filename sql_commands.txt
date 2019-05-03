@@ -1,0 +1,21 @@
+//CREATE  database
+CREATE DATABASE data_science;
+
+//CREATE TABLE
+CREATE TABLE CustomerData (
+    No MEDIUMINT NOT NULL AUTO_INCREMENT,
+    Name varchar(M),
+    Address_line1 varchar(M),
+    Address_line2 varchar(M),
+    City varchar(M) 
+    PRIMARY KEY (No)
+);
+INSERT INTO `customerdata`(`NO`, `NAME`, `Address_line1`, `Address_line2`, `City`) VALUES (1,"L&M Logistics","703-30711 SIMPSON RD","Suite 301","Bridgewater"), (2,"DNM Distirbutors ATTN: George","781 MAIN STREET","NULL","Somerville"), (3,"Assan Trails","8451 MOUNTAIN AVENUE","FAWCETT RD","Kansas City"), (4,"Home Depot # THD","1748 BROOKSIDE AVENUE","TROON CIRCLE","Norman"
+), (5,"Grasshopper","9140 42ND PARK AVENUE","Bldg# 5","Indianapolis"
+), (6,"Old Navy","WEST GEORGIA ST","NULL","Indianapolis"
+), (7,"Walmart ATTN: Michael Gore","DICKSON AVE","%WALMART","Oklah"
+);
+
+SELECT * FROM CustomerData WHERE Address_line1 REGEXP "^[0,1,2,3,4,5,6,7,8,9]."
+
+SELECT `NO`,`Address_line2`, SUBSTRING_INDEX( `Address_line2` , '%' , -1) FROM CustomerData
