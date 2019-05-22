@@ -45,3 +45,14 @@ GROUP BY NAME,
 
 //Replace
 Select REPLACE('2143 Pink Street Bldg#6','#',' ') FROM TABLE
+
+//LOAD DATA INFILE
+LOAD DATA INFILE 'I:/temp/Execution/New folder (5)/SQL_for_data_science/Book2.csv' INTO TABLE customer
+
+FIELDS TERMINATED BY ','
+
+ENCLOSED BY '"'
+
+LINES TERMINATED BY '\n'
+
+(NO, id, Name, Street, City)
