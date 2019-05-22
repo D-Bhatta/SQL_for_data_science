@@ -42,3 +42,6 @@ FROM
 GROUP BY NAME,
     Street,
     City
+
+//Replace
+Select REPLACE('2143 Pink Street Bldg#6','#',' ') FROM TABLE

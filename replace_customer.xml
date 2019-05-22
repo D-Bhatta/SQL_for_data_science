@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.8.5
+- https://www.phpmyadmin.net
+-
+- Host: 127.0.0.1
+- Generation Time: May 22, 2019 at 07:21 PM
+- Server version: 10.1.38-MariaDB
+- PHP Version: 7.3.2
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="data_science" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="customer">
+                CREATE TABLE `customer` (
+                  `NO` smallint(2) NOT NULL AUTO_INCREMENT,
+                  `id` mediumint(9) DEFAULT NULL,
+                  `Name` varchar(255) DEFAULT NULL,
+                  `Street` varchar(255) DEFAULT NULL,
+                  `City` varchar(255) DEFAULT NULL,
+                  PRIMARY KEY (`NO`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'data_science'
+    -->
+    <database name="data_science">
+        <!-- Table customer -->
+        <table name="customer">
+            <column name="REPLACE('2143 Pink Street Bldg#6','#',' ')">2143 Pink Street Bldg 6</column>
+        </table>
+    </database>
+</pma_xml_export>
