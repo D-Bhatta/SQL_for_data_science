@@ -16,10 +16,29 @@ INSERT INTO `customerdata`(`NO`, `NAME`, `Address_line1`, `Address_line2`, `City
 ), (7,"Walmart ATTN: Michael Gore","DICKSON AVE","%WALMART","Oklah"
 );
 
+//Regular Expression
 SELECT * FROM CustomerData WHERE Address_line1 REGEXP "^[0,1,2,3,4,5,6,7,8,9]."
 
+//Substring Index
 SELECT `NO`,`Address_line2`, SUBSTRING_INDEX( `Address_line2` , '%' , -1) FROM CustomerData
 
+//Coalesce
 SELECT `Address_line1`,`Address_line2`,coalesce(`Address_line2`,`Address_line1`) FROM `customerdata`
 
+//Locate
 SELECT LEFT("Hello_How_Are_You", CHAR_LENGTH("Hello_How_Are_You") – LOCATE('_', REVERSE("Hello_How_Are_You")));
+
+//Create another table
+CREATE TABLE `customer`(NO SMALLINT(2) NOT NULL AUTO_INCREMENT, id mediumint(9), Name varchar(255), Street varchar(255), City varchar(255), PRIMARY KEY (No))
+
+//Group Concat
+SELECT
+    GROUP_CONCAT(id),
+    NAME,
+    Street,
+    City
+FROM
+    customer
+GROUP BY NAME,
+    Street,
+    City
