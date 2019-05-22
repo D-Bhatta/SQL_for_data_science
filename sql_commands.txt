@@ -21,3 +21,5 @@ SELECT * FROM CustomerData WHERE Address_line1 REGEXP "^[0,1,2,3,4,5,6,7,8,9]."
 SELECT `NO`,`Address_line2`, SUBSTRING_INDEX( `Address_line2` , '%' , -1) FROM CustomerData
 
 SELECT `Address_line1`,`Address_line2`,coalesce(`Address_line2`,`Address_line1`) FROM `customerdata`
+
+SELECT LEFT("Hello_How_Are_You", CHAR_LENGTH("Hello_How_Are_You") – LOCATE('_', REVERSE("Hello_How_Are_You")));
